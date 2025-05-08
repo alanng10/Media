@@ -36,6 +36,8 @@ System.Storage
     StorageStatusList StatusList
 System.Entry
     EntryEntry Entry
+Text.Text:0.00.00
+    TextAdd Add
 Type.Type:0.00.00
     Type Type
     TypeIndex Index
