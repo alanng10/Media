@@ -9,6 +9,11 @@ class ViewA : View
         brushA.Color : this.Demo.DrawInfra.ColorCreate(0hff, 0, 0, 0hff);
         brushA.Init();
 
+        this.Brush : new DrawBrush;
+        this.Brush.Kind : this.Demo.BrushKindList.Color;
+        this.Brush.Color : this.Demo.DrawInfra.ColorCreate(0hff, 0, 0, 0hff);
+        this.Brush.Init();
+
         var DrawBrush slashBrush;
         slashBrush : new DrawBrush;
         slashBrush.Kind : this.Demo.BrushKindList.Color;
@@ -55,6 +60,7 @@ class ViewA : View
 
     field prusate Demo Demo { get { return data; } set { data : value; } }
     field prusate DrawSlash Slash { get { return data; } set { data : value; } }
+    field prusate DrawBrush Brush { get { return data; } set { data : value; } }
     field prusate DrawForm Form { get { return data; } set { data : value; } }
     field prusate Int RotateValue { get { return data; } set { data : value; } }
 
@@ -111,6 +117,20 @@ class ViewA : View
         draw.FormSet();
 
         draw.ExecuteImage(this.Demo.PlayImage, this.DrawRectA, this.DrawRectB);
+
+        this.DrawRectA.Pos.Col : this.MathInt(150);
+        this.DrawRectA.Pos.Row : this.MathInt(100);
+        this.DrawRectA.Size.Wed : this.MathInt(150);
+        this.DrawRectA.Size.Het : this.MathInt(100);
+
+        draw.Fill : this.Brush;
+        draw.Line : this.Slash;
+
+        draw.FillPos.Col : this.MathInt(0);
+        draw.FillPos.Row : this.MathInt(0);
+        draw.FillPosSet();
+
+        draw.ExecuteRectRound(this.DrawRectA, this.MathInt(40), this.MathInt(30));
 
         draw.Form : null;
         draw.FormSet();
