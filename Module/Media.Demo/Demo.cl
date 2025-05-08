@@ -48,13 +48,11 @@ class Demo : TextAdd
         this.MathComp : new MathComp;
         this.MathComp.Init();
 
-        this.ThreadDrawImage : this.ThreadDrawImageCreate();
-
         this.ExecuteDemoThread();
 
         this.Frame : new Frame;
         this.Frame.Init();
-        this.Frame.Title : "View Demo";
+        this.Frame.Title : "Media Demo";
         this.Frame.TitleSet();
 
         this.UpdateRect : this.DrawInfra.RectCreate(0, 0, this.Frame.Size.Wed, this.Frame.Size.Het);
@@ -65,39 +63,9 @@ class Demo : TextAdd
         type.Demo : this;
         this.Frame.Type : type;
 
-        var DrawBrush brush;
-        brush : new DrawBrush;
-        brush.Kind : this.BrushKindList.Color;
-        brush.Color : this.DrawInfra.ColorCreate(0hff, 0, 0hff, 0);
-        brush.Init();
-
-        this.View : new View;
-        this.View.Init();
-        this.View.Pos.Col : 100;
-        this.View.Pos.Row : 100;
-        this.View.Size.Wed : 1600;
-        this.View.Size.Het : 900;
-        this.View.Back : brush;
-
-        this.ViewC : new ViewC;
-        this.ViewC.Demo : this;
-        this.ViewC.Init();
-
         this.ViewA : new ViewA;
         this.ViewA.Demo : this;
         this.ViewA.Init();
-
-        var Grid grid;
-        grid : this.GridCreate();
-
-        this.View.Child : grid;
-
-        var ViewB viewB;
-        viewB : new ViewB;
-        viewB.Demo : this;
-        viewB.Init();
-
-        this.ViewA.Child : viewB;
 
         this.PlayImage : this.PlayImageCreate();
 
@@ -105,7 +73,7 @@ class Demo : TextAdd
         this.Play.Demo : this;
         this.Play.Init();
 
-        this.Frame.View : this.View;
+        this.Frame.View : this.ViewA;
         this.Frame.Shown : true;
 
         var Thread thread;
@@ -117,115 +85,9 @@ class Demo : TextAdd
 
         this.PlayImageFinal(this.PlayImage);
 
-        viewB.Final();
-
-        this.GridFinal(grid);
-
         this.ViewA.Final();
 
-        this.ViewC.Final();
-
-        brush.Final();
-
         this.Frame.Final();
-
-        this.ThreadDrawImageFinal(this.ThreadDrawImage);
-        return true;
-    }
-
-    maide private Grid GridCreate()
-    {
-        var DrawBrush gridBrush;
-        gridBrush : new DrawBrush;
-        gridBrush.Kind : this.BrushKindList.Color;
-        gridBrush.Color : this.DrawInfra.ColorCreate(0h80, 0, 0, 0);
-        gridBrush.Init();
-
-        var Grid grid;
-        grid : new Grid;
-        grid.Init();
-
-        grid.Back : gridBrush;
-
-        var ViewCount colA;
-        colA : new ViewCount;
-        colA.Init();
-        colA.Value : 600;
-        var ViewCount colB;
-        colB : new ViewCount;
-        colB.Init();
-        colB.Value : 600;
-        var ViewCount rowA;
-        rowA : new ViewCount;
-        rowA.Init();
-        rowA.Value : 600;
-        var GridChild childA;
-        childA : new GridChild;
-        childA.Init();
-        childA.View : this.ViewA;
-        childA.Rect.Size.Wed : 1;
-        childA.Rect.Size.Het : 1;
-        var GridChild childB;
-        childB : new GridChild;
-        childB.Init();
-        childB.View : this.ViewC;
-        childB.Rect.Pos.Col : 1;
-        childB.Rect.Size.Wed : 1;
-        childB.Rect.Size.Het : 1;
-
-        grid.Pos.Col : 50;
-        grid.Pos.Row : 50;
-        grid.Size.Wed : 1500;
-        grid.Size.Het : 800;
-        grid.Row.Add(rowA);
-        grid.Col.Add(colA);
-        grid.Col.Add(colB);
-        grid.ChildList.Add(childA);
-        grid.ChildList.Add(childB);
-        return grid;
-    }
-
-    maide private Bool GridFinal(var Grid a)
-    {
-        a.Back.Final();
-        return true;
-    }
-
-    maide private DrawImage ThreadDrawImageCreate()
-    {
-        var DrawImage a;
-        a : this.DrawInfra.ImageCreateSize(this.DrawInfra.SizeCreate(250, 200));
-        return a;
-    }
-
-    maide private Bool ThreadDrawImageFinal(var DrawImage a)
-    {
-        a.Final();
-        return true;
-    }
-
-    maide private Bool ExecuteDemoThread()
-    {
-        var ThreadState state;
-        state : new ThreadState;
-        state.Init();
-        state.Demo : this;
-        state.Image : this.ThreadDrawImage;
-
-        var Thread thread;
-        thread : new Thread;
-        thread.Init();
-        thread.ExecuteState : state;
-        thread.Execute();
-
-        thread.Wait();
-
-        var Int aa;
-        aa : thread.Status;
-        this.Console.Out.Write(this.AddClear().Add("Demo.ExecuteDemoThread Thread Status: 0h").Add(this.StringIntHex(aa)).AddLine().AddResult());
- 
-        thread.Final();
-
         return true;
     }
 
