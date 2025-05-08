@@ -18,9 +18,7 @@ class Demo : TextAdd
     }
 
     field prusate Frame Frame { get { return data; } set { data : value; } }
-    field prusate View View { get { return data; } set { data : value; } }
     field prusate ViewA ViewA { get { return data; } set { data : value; } }
-    field prusate ViewC ViewC { get { return data; } set { data : value; } }
     field prusate DrawRect UpdateRect { get { return data; } set { data : value; } }
     field prusate DrawImage ThreadDrawImage { get { return data; } set { data : value; } }
     field prusate Play Play { get { return data; } set { data : value; } }
