@@ -3,6 +3,7 @@ class ViewA : View
     maide prusate Bool Init()
     {
         base.Init();
+
         var DrawBrush brushA;
         brushA : new DrawBrush;
         brushA.Kind : this.Demo.BrushKindList.Color;
@@ -11,7 +12,7 @@ class ViewA : View
 
         this.Brush : new DrawBrush;
         this.Brush.Kind : this.Demo.BrushKindList.Color;
-        this.Brush.Color : this.Demo.DrawInfra.ColorCreate(0hff, 0, 0, 0hff);
+        this.Brush.Color : this.Demo.DrawInfra.ColorCreate(0hff, 0hff, 0hff, 0);
         this.Brush.Init();
 
         var DrawBrush slashBrush;
@@ -126,7 +127,6 @@ class ViewA : View
         this.DrawRectA.Size.Het : this.MathInt(100);
 
         draw.Fill : this.Brush;
-        draw.Line : this.Slash;
 
         draw.FillPos.Col : this.MathInt(0);
         draw.FillPos.Row : this.MathInt(0);
