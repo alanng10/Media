@@ -46,8 +46,6 @@ class Demo : TextAdd
         this.MathComp : new MathComp;
         this.MathComp.Init();
 
-        this.ExecuteDemoThread();
-
         this.Frame : new Frame;
         this.Frame.Init();
         this.Frame.Title : "Media Demo";
