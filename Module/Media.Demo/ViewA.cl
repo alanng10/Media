@@ -54,6 +54,8 @@ class ViewA : View
 
         k.Final();
 
+        this.Brush.Final();
+
         this.Back.Final();
         return true;
     }
