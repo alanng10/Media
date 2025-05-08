@@ -1,0 +1,87 @@
+[Module]
+Media.Demo:0.00.00
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    Range Range
+    Data Data
+    State State
+    InfraInfra Infra
+System.List
+    Array Array
+    ListInfra Infra
+System.Math
+    Math Math
+    MathComp Comp
+    MathInfra Infra
+    Rand Rand
+System.Text
+    Text Text
+    TextForm Form
+    TextFormat Format
+    TextFormatArg FormatArg
+System.Thread
+    Thread Thread
+    ThreadThis This
+    ThreadPhore Phore
+System.Stream
+    Stream Stream
+System.Storage
+    Storage Storage
+    StorageMode Mode
+    StorageStatusList StatusList
+System.Entry
+    EntryEntry Entry
+Type.Type:0.00.00
+    Type Type
+    TypeIndex Index
+    TypeIndexList IndexList
+View.Draw:0.00.00
+    Draw Draw
+    DrawImage Image
+    DrawImageRead ImageRead
+    DrawImageWrite ImageWrite
+    DrawColor Color
+    DrawCompList CompList
+    DrawForm Form
+    DrawFont Font
+    DrawBrush Brush
+    DrawBrushKindList BrushKindList
+    DrawSlash Slash
+    DrawSlashLineList SlashLineList
+    DrawSlashCapeList SlashCapeList
+    DrawSlashJoinList SlashJoinList
+    DrawPolate Polate
+    DrawPolateKindList PolateKindList
+    DrawPolateSpreadList PolateSpreadList
+    DrawPolateLinear PolateLinear
+    DrawPolateStop PolateStop
+    DrawPolateStopPoint PolateStopPoint
+    DrawAlignList AlignList
+    DrawRect Rect
+    DrawInfra Infra
+View.View:0.00.00
+    View View
+    Button Button
+    Grid Grid
+    GridChild GridChild
+    ViewCount Count
+    ViewInfra Infra
+View.Frame:0.00.00
+    Frame Frame
+Media.Media:0.00.00
+    MediaPlay Play
+    MediaVideoOut VideoOut
+    MediaAudioOut AudioOut
+
+[Export]
+
+[Storage]
+Demo:Data
+
+[Entry]
+Entry
