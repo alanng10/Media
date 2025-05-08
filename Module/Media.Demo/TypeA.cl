@@ -68,44 +68,6 @@ class TypeA : Type
             b : true;
         }
 
-        var Bool ba;
-        ba : false;
-
-        inf (a = d.AlphaA & o)
-        {
-            k : this.Demo.ViewC.Pos.Col;
-            k : k - 10;
-            this.Demo.ViewC.Pos.Col : k;
-            ba : true; 
-        }
-        inf (a = d.AlphaD & o)
-        {
-            k : this.Demo.ViewC.Pos.Col;
-            k : k + 10;
-            this.Demo.ViewC.Pos.Col : k;
-            ba : true; 
-        }
-        inf (a = d.AlphaW & o)
-        {
-            k : this.Demo.ViewC.Pos.Row;
-            k : k - 10;
-            this.Demo.ViewC.Pos.Row : k;
-            ba : true; 
-        }
-        inf (a = d.AlphaS & o)
-        {
-            k : this.Demo.ViewC.Pos.Row;
-            k : k + 10;
-            this.Demo.ViewC.Pos.Row : k;
-            ba : true; 
-        }
-
-        inf (a = d.AlphaM)
-        {
-            this.Demo.ViewC.Button.Focus : o;
-            ba : true;
-        }
-
         inf (a = d.AlphaH & o)
         {
             var Bool baa;
@@ -169,17 +131,6 @@ class TypeA : Type
             this.Demo.Play.Pos : kkaa;
         }
 
-        inf (a = d.AlphaN & o)
-        {
-            var String frameTitle;
-            frameTitle : this.Demo.AddClear().Add("View Demo ").Add(this.Demo.StringInt(this.TitleIndex)).AddResult();
-
-            this.Demo.Frame.Title : frameTitle;
-            this.Demo.Frame.TitleSet();
-
-            this.TitleIndex : this.TitleIndex + 1;
-        }
-
         inf (b)
         {
             this.Demo.ViewInfra.AssignDrawRectValue(this.Demo.UpdateRect, this.Demo.ViewA.Area);
@@ -187,12 +138,6 @@ class TypeA : Type
             this.Demo.Frame.Update(this.Demo.UpdateRect);
         }
 
-        inf (ba)
-        {
-            this.Demo.ViewInfra.AssignDrawRectValue(this.Demo.UpdateRect, this.Demo.ViewC.Area);
-
-            this.Demo.Frame.Update(this.Demo.UpdateRect);
-        }
         return true;
     }
 }
