@@ -15,6 +15,7 @@ class Demo : TextAdd
         this.PolateKindList : share DrawPolateKindList;
         this.PolateSpreadList : share DrawPolateSpreadList;
         this.AlignList : share DrawAlignList;
+        this.Screen : share Screen;
         return true;
     }
 
@@ -36,6 +37,8 @@ class Demo : TextAdd
     field prusate DrawPolateKindList PolateKindList { get { return data; } set { data : value; } }    
     field prusate DrawPolateSpreadList PolateSpreadList { get { return data; } set { data : value; } }    
     field prusate DrawAlignList AlignList { get { return data; } set { data : value; } }
+    field prusate Screen Screen { get { return data; } set { data : value; } }
+    field prusate ThreadThis ThreadThis { get { return data; } set { data : value; } }
     field precate MathComp MathComp { get { return data; } set { data : value; } }
     field private Stream MediaStream { get { return data; } set { data : value; } }
 
@@ -44,6 +47,7 @@ class Demo : TextAdd
         var ThreadThis varThis;
         varThis : new ThreadThis;
         varThis.Init();
+        this.ThreadThis : varThis;
 
         this.MathComp : new MathComp;
         this.MathComp.Init();
@@ -53,7 +57,7 @@ class Demo : TextAdd
         this.Frame.Title : "Media Demo";
         this.Frame.TitleSet();
 
-        this.UpdateRect : this.DrawInfra.RectCreate(0, 0, this.Frame.Size.Wed, this.Frame.Size.Het);
+        this.UpdateRect : this.DrawInfra.RectCreate(0, 0, this.Screen.Size.Wed, this.Screen.Size.Het);
 
         var TypeA type;
         type : new TypeA;
