@@ -16,7 +16,7 @@ class VideoOut : Any
         var Int ka;
         ka : this.InternIntern.StateVideoOutFrameEvent();
         var Int arg;
-        arg : this.InternIntern.Memory(this);
+        arg : this.InternIntern.StateArgMemory(this);
         this.InternFrameState : this.InternInfra.StateCreate(ka, arg);
 
         var Extern extern;
